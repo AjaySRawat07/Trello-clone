@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trello Board</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="drag.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/63450758f4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bg-black w-full h-screen font-serif ">
+    <!-- Login form -->
+    <div id="loginForm" class="flex">
+      <div
+        class="bg-[#f5f5f5] z-100 absolute left-[50%] translate-x-[-50%] w-[340px] md:w-[390px] text-center flex items-center flex-col gap-4 top-10 rounded-3xl shadow-inner py-8"
+      >
+        <h1 class="text-[#333333] text-[1.4rem] md:text-[1.75rem] font-bold">
+          Login to My To Do App
+        </h1>
+        <div class="flex mx-auto mt-4 gap-6">
+          <div
+            class="w-12 h-12 bg-white flex items-center justify-center rounded-full shadow-xl"
+          >
+            <a href="https://www.google.com" title="Google"
+              ><img
+                src="https://www.shareicon.net/data/2016/07/10/119930_google_512x512.png"
+                width="17px"
+                alt=""
+            /></a>
+          </div>
+          <div
+            class="w-12 h-12 bg-[#1877F2] flex items-center justify-center rounded-full shadow-xl"
+          >
+            <a href="https://www.facebook.com/" title="Facebook"
+              ><i class="fa-brands fa-facebook-f text-white text-[1.5rem]"></i
+            ></a>
+          </div>
+          <div
+            class="w-12 h-12 bg-[#1DA1F2] flex items-center justify-center rounded-full shadow-xl"
+          >
+            <a href="https://twitter.com/"india" title="Twitter"
+              ><i class="fa-brands fa-twitter text-white text-[1.5rem]"></i
+            ></a>
+          </div>
+          <div
+            class="w-12 h-12 bg-black flex items-center justify-center rounded-full shadow-xl"
+          >
+            <a
+              href="https://appleid.apple.com/auth/authorize?client_id=com..pwa&redirect_uri=https%3A%2F%2Fwww."".com&response_type=code%20id_token&state=origin%3Aweb&scope=name%20email&response_mode=web_message&frame_id=71ff4780-82c0-46df-8cf9-df9b762d172e&m=11&v=1.5.5"
+              title="Apple"
+              ><i class="fa-brands fa-apple text-white text-[1.5rem]"></i
+            ></a>
+          </div>
+        </div>
+        <div class="w-full flex justify-between items-center mx-4">
+          <div class="w-[40%] border-t border-gray-300"></div>
+          <div
+            class="w-10 m-2 h-10 text-sm font-semibold flex items-center justify-center relative rounded-full bg-[#F9F9F9] border-[1px] border-gray-300"
+          >
+            OR
+          </div>
+          <div class="w-[40%] border-t border-gray-300"></div>
+        </div>
+        <input
+          id="username"
+          class="w-[83%] px-4 py-3 border-[1px] rounded-md border-gray-400 placeholder:text-[#808080] text-[.8rem] md:text-[1rem]"
+          type="email"
+          placeholder="Enter your username"
+          required
+        />
+        <input
+          id="password"
+          class="w-[83%] px-4 py-3 border-[1px] rounded-md border-gray-400 placeholder:text-[#808080] text-[.8rem] md:text-[1rem]"
+          type="password"
+          placeholder="Enter you password"
+          required
+        />
+        <input
+          class="w-[82%] bg-[#b173e3] hover:bg-[#8a52b8] cursor-pointer transition-all duration-500 ease-in-out text-[#ffffff] text-[1rem] font-semibold px-4 mt-4 py-3 border-[1px] rounded-md"
+          type="submit"
+          value="Login"
+          onclick="login()"
+        />
+      </div>
+      <div class="animatedbg">
+        <ul class="squares">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+    </div>
+    <!--  -->
+
+    <div id="todoList" class="hidden flex-col pt-4 bg-cover bg-center bg-no-repeat h-screen" style="background-image: url(./image/img1.jpg);">
+      <div class="mx-12 flex justify-between">
+        <form id="todo-form">
+          <div class="flex gap-4">
+            <input
+              type="text"
+              class="pl-2 py-3 w-64 outline-none rounded-lg"
+              id="todo-input"
+              placeholder="New TODO..."
+            />
+            <button
+              class="text-white bg-blue-500 rounded-lg py-3 w-64 outline-none"
+              type="submit"
+            >
+              Add Card
+            </button>
+          </div>
+        </form>
+        <button
+          class="text-white bg-red-500 rounded-lg py-2 w-44"
+          onclick="logout()"
+        >
+          Logout
+        </button>
+      </div>
+
+      <div class="lanes">
+        <div class="swim-lane" id="todo-lane">
+          <h3 class="heading1">TODO</h3>
+        </div>
+        <div class="swim-lane" id="doing-lane">
+          <h3 class="heading2">DOING</h3>
+        </div>
+        <div class="swim-lane" id="done-lane">
+          <h3 class="heading3">DONE</h3>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

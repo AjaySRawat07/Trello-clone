@@ -1,0 +1,268 @@
+* {
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+.lanes {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 40px;
+  gap: 20px;
+  overflow-x: auto;
+  height: calc(100vh - 100px);
+  background: transparent;
+}
+
+.heading-sec {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.delete-card-btn {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-card-btn:hover {
+  background-color: #c82333;
+}
+
+.heading1,
+.heading2,
+.heading3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  color: white;
+}
+
+.swim-lane {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(245, 245, 245, 0.107);
+  box-shadow: 0 4px 6px rgba(249, 246, 246, 0.5);
+  border-radius: 8px;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header span {
+  font-weight: 700;
+  background-color: rgba(127, 255, 212, 0.672);
+  color: rgb(70, 68, 68);
+}
+.work-div {
+  padding: 2px;
+}
+label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: gray;
+}
+.work-inpt {
+  outline: none;
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+.date-inpt {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.work-div,
+.date-div,
+.custom-select {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.custom-select {
+  position: relative;
+  user-select: none;
+}
+
+.custom-select .custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  box-shadow: 0 2px 5;
+}
+
+.animatedbg {
+  background-color: #0f0617;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+
+.animatedbg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to left, #ffffff14, #ffffff0e);
+  pointer-events: none;
+}
+
+.squares {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.squares li {
+  list-style: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ffffff23;
+  animation: heaven 25s linear infinite;
+  bottom: -250px;
+}
+
+.squares li:nth-child(1) {
+  left: 5%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 4s;
+  animation-duration: 10s;
+}
+
+.squares li:nth-child(2) {
+  left: 10%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 8s;
+  animation-duration: 10s;
+}
+
+.squares li:nth-child(3) {
+  left: 20%;
+  width: 55px;
+  height: 55px;
+  animation-delay: 2s;
+  animation-duration: 6s;
+}
+
+.squares li:nth-child(4) {
+  left: 25%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 5s;
+  animation-duration: 8s;
+}
+
+.squares li:nth-child(5) {
+  left: 35%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 7s;
+  animation-duration: 17s;
+}
+
+.squares li:nth-child(6) {
+  left: 40%;
+  width: 90px;
+  height: 90px;
+  animation-delay: 1s;
+  animation-duration: 12s;
+}
+
+.squares li:nth-child(7) {
+  left: 50%;
+  width: 150px;
+  height: 150px;
+  animation-delay: 4s;
+  animation-duration: 9s;
+}
+
+.squares li:nth-child(8) {
+  left: 65%;
+  width: 60px;
+  height: 60px;
+  animation-delay: 2s;
+  animation-duration: 8s;
+}
+
+.squares li:nth-child(9) {
+  left: 70%;
+  width: 80px;
+  height: 80px;
+  animation-delay: 5s;
+  animation-duration: 18s;
+}
+
+.squares li:nth-child(10) {
+  left: 80%;
+  width: 160px;
+  height: 160px;
+  animation-delay: 8s;
+  animation-duration: 15s;
+}
+
+.squares li:nth-child(11) {
+  left: 90%;
+  width: 110px;
+  height: 110px;
+  animation-delay: 4s;
+  animation-duration: 13s;
+}
+
+@keyframes heaven {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0.5;
+    border-radius: 50%;
+  }
+}
