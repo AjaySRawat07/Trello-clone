@@ -1,13 +1,27 @@
+let data = {
+  "ajju246455@gmail.com":"password1",
+  "ajay@gmail.com":"password2",
+  "hello123@gmail.com":"password3",
+  "hey5@gmail.com":"password4",
+  "user1234@gmail.com":"password5",
+}
+
 function login() {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
+
   if (username && password) {
-    let userAuth = { username :username, password:password };
-    localStorage.setItem("authorization", JSON.stringify({ userAuth }));
-    document.getElementById("loginForm").classList.remove("flex");
-    document.getElementById("loginForm").classList.add("hidden");
-    document.getElementById("todoList").classList.add("flex");
-    document.getElementById("todoList").classList.remove("hidden");
+    
+    if (data[username] && data[username] === password) {
+      let userAuth = { username: username, password: password };
+      localStorage.setItem("authorization", JSON.stringify({ userAuth }));
+      document.getElementById("loginForm").classList.remove("flex");
+      document.getElementById("loginForm").classList.add("hidden");
+      document.getElementById("todoList").classList.add("flex");
+      document.getElementById("todoList").classList.remove("hidden");
+    } else {
+      alert("Incorrect username or password.");
+    }
   } else {
     alert("Please enter username and password.");
   }
@@ -93,7 +107,7 @@ function createCard(content) {
       </div>
       <div class="date-div">
         <label for="dateInput">Date:</label>
-        <input type="date" id="dateInput" />
+        <input type="date" id="dateInput" value="2024-02-23"min="2024-02-01" max="2024-02-29"/>
       </div>
       <div class="custom-select" tabindex="0">
         <span class="selected">Select priority</span>
@@ -156,21 +170,40 @@ function loadTasks() {
 
 function initializeCustomSelect(cardElement) {
   const customSelect = cardElement.querySelector(".custom-select");
+  
   customSelect.addEventListener("click", function () {
-    this.querySelector(".custom-options").style.display = "block";
+    const optionsList = this.querySelector(".custom-options");
+    
+    
+    if (optionsList.style.display === "block") {
+      optionsList.style.display = "none";
+    } else {
+      optionsList.style.display = "block";
+    }
   });
 
   const options = cardElement.querySelectorAll(".custom-option");
+  
   options.forEach((option) => {
     option.addEventListener("click", function () {
-      const selected =
-        this.closest(".custom-select").querySelector(".selected");
+      const selected = this.closest(".custom-select").querySelector(".selected");
+      
+      // Set selected option text and color
       selected.textContent = this.textContent;
       selected.style.color = this.style.color;
+      
+      // Hide the options list after selection
       this.closest(".custom-options").style.display = "none";
     });
   });
 }
+
+// Initialize custom select
+const customSelects = document.querySelectorAll(".custom-select");
+customSelects.forEach((select) => {
+  initializeCustomSelect(select);
+});
+
 
 function attachDeleteEventToCard(card) {
   const deleteBtn = card.querySelector(".delete-card-btn");
