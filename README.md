@@ -1,6 +1,6 @@
 Email and Password Below the Link.
 
-Host link -> https://ajaysrawat07.github.io/trello-clone/
+Host link -> https://ajaysrawat07.github.io/Trello-clone/
 
 {
 "ajju246455@gmail.com":  "password1"  ||   
