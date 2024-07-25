@@ -2,11 +2,11 @@ Email and Password Below the Link.
 
 Host link -> https://ajaysrawat07.github.io/Trello-clone/
 
-{
-"ajju246455@gmail.com":  "password1"  ||   
-  "git2112@gmail.com":  "password2"   ||
-  "user1234@gmail.com":  "password5",
-}
+
+USERNAME => "ajju246455@gmail.com": PASSWORD =>  "password1",  
+USERNAME =>  "git2112@gmail.com":  PASSWORD =>  "password2" ,
+USERNAME =>  "user1234@gmail.com": PASSWORD =>  "password5",
+
 
 
 
